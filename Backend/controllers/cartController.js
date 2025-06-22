@@ -3,7 +3,7 @@ const userModel = require('../models/userModel.js');
 
 // Function to add an item to the cart
 
-const addToCart = async (req, res) => {
+const addToCart = async (req, res) => { 
     try {
         let userData = await userModel.findById(req.body.userId);
         let cartData = await userData.cartData;
