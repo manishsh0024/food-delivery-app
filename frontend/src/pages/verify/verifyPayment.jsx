@@ -23,7 +23,7 @@ const Verify = () => {
 
         if (res.data.success) {
           setCartItem({})
-          navigate("/myorder");
+          setTimeout(() => navigate("/myorder"), 100);
         } else {
           setStatus("failed");
         }
@@ -35,6 +35,9 @@ const Verify = () => {
 
     verifyPayment();
   }, [orderId, success, navigate, setCartItem, url]);
+
+  console.log("Parsed success:", success);
+  console.log("Parsed orderId:", orderId);
 
   return (
     <div className="min-h-[80vh] flex flex-col justify-center items-center bg-gray-50 px-4">
