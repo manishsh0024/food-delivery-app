@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { useCallback } from "react";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const StoreContext = createContext(null);
@@ -79,12 +80,14 @@ const StoreContextProvider = ({ children }) => {
     return total + item.price * cartItem[item._id];
   }, 0);
 
-  const fetchFoodList = async () => {
+
+
+  const fetchFoodList = useCallback(async () => {
     const res = await axios.get(`${url}/api/food/list`);
     setFoodList(res.data.data);
-  };
+  }, [url]);
 
-  const loadCartData = async (token) => {
+  const loadCartData = useCallback(async (token) => {
     try {
       const res = await axios.post(
         `${url}/api/cart/items`,
@@ -101,9 +104,9 @@ const StoreContextProvider = ({ children }) => {
       console.error("Error loading cart:", err);
       setCartItem({});
     }
-  };
+  }, [url]);
 
-  useEffect(() => {
+useEffect(() => {
   async function loadData() {
     await fetchFoodList();
     const tokenFromStorage = localStorage.getItem("token");
@@ -113,7 +116,7 @@ const StoreContextProvider = ({ children }) => {
     }
   }
   loadData();
-}, []);
+}, [fetchFoodList, loadCartData]);
 
 
   const contextValue = {
