@@ -18,7 +18,7 @@ const Verify = () => {
 
     const verifyPayment = async () => {
       try {
-        const res = await axios.post(`${url}/api/order/verify`, { success, orderId });
+        const res = await axios.post(`${url}/api/order/verify`, { success, orderId },  { headers: { "Content-Type": "application/json" } });
         console.log("Verification response:", res.data);
 
         if (res.data.success) {
