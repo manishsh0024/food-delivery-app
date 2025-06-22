@@ -47,7 +47,7 @@ const ItemList = ({url}) => {
         {list.map((item, index) => (
           <div key={index} className="bg-white shadow-md rounded-xl p-4">
             <img
-              src={`http://localhost:4000/images/${item.image}`}
+              src={`${url}/images/${item.image}`}
               alt={item.name}
               className="w-full h-40 object-cover rounded-md"
             />

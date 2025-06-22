@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { assets } from "../../assets/admin_assets/assets";
 import axios from "axios"
 import { ToastContainer, toast } from "react-toastify";
