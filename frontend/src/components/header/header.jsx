@@ -2,11 +2,11 @@ import { motion as Motion } from 'framer-motion';
 
 const Header = () => {
   return (
-    <div className="container">
-      <div className="relative bg-[url('/assets/frontend_assets/header_img.png')] bg-cover bg-center md:py-0 md:h-[60vh] rounded-lg overflow-hidden">
+    <div className="container pb-5">
+      <div className="relative bg-[url('./assets/frontend_assets/header_img.png')] bg-cover bg-center md:py-0 md:h-[60vh] rounded-lg overflow-hidden">
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40 rounded-lg z-0"></div>
+        <div className="absolute inset-0 bg-black/30 rounded-lg z-0"></div>
 
         {/* Text Content */}
         <div className="relative z-10 flex flex-col items-start justify-center h-full p-10">
