@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 // Placing The order
 const placeOrder = async (req, res) => {
   
-  // front Url IN .ENV file as Client URL
+  //  front Url IN .ENV file as Client URL
 
   try {
     const newOrder = new orderModel({
