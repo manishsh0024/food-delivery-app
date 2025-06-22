@@ -37,6 +37,7 @@ const ItemList = ({url}) => {
 
   useEffect(() => {
     listData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
